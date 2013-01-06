@@ -1,0 +1,17 @@
+{
+    "name": "naked-kue",    
+    "main": "server.js",
+    "version": "0.0.1",
+    "private": false,
+    "dependencies": {        
+        "clusterize": "git+ssh://git@github.com:yanush/clusterize.git#master",
+        "redis": "*",
+        "kue": "*"
+    },
+    "devDependencies": {
+        "vows": "*"
+    },
+    "engine": {
+        "node": ">=0.8"
+    }
+}
