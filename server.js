@@ -1,6 +1,7 @@
 var kue = require('kue');
 var redis = require('redis');
 var config = require('./config');
+var clusterize = require('forkraft').clusterize;
 
 kue.redis.createClient = function() {
   var client = redis.createClient(config.redis.port, config.redis.server);    
@@ -8,7 +9,6 @@ kue.redis.createClient = function() {
 };
 
 var jobs = kue.createQueue();
-var clusterize = require('clusterize');
 
 clusterize(worker, master);
 
